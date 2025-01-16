@@ -1,6 +1,3 @@
-[submodule "client"]
-	path = client
-	url = git@github.com:rvph10/nibblix-client.git
 [submodule "server"]
 	path = server
 	url = git@github.com:rvph10/nibblix-server.git
