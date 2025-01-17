@@ -8,7 +8,7 @@ Nibblix follows a modern microservices architecture with event-driven patterns f
 ### Frontend Architecture
 
 #### Technology Stack
-- **Framework**: Next.js 14 with App Router
+- **Framework**: Next.js 15 with App Router
 - **State Management**: React Query + Context API
 - **Styling**: TailwindCSS + Shadcn UI
 - **Real-time**: Socket.io Client
