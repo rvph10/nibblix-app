@@ -1,17 +1,20 @@
-name: Server CI/CD
+name: Server CI
 
 on:
   push:
-    branches: [ main ]
+    branches: [ main, staging, development ]
     paths:
       - 'server/**'
+      - '.github/workflows/server.yml'
   pull_request:
-    branches: [ main ]
+    branches: [ main, staging, development ]
     paths:
       - 'server/**'
+      - '.github/workflows/server.yml'
 
 jobs:
   test:
+    name: server/test
     runs-on: ubuntu-latest
     defaults:
       run:
@@ -72,6 +75,7 @@ jobs:
           REDIS_URL: redis://localhost:6379
 
   build:
+    name: server/build
     needs: test
     runs-on: ubuntu-latest
     defaults:

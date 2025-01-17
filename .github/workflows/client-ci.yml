@@ -1,17 +1,20 @@
-name: Client CI/CD
+name: Client CI
 
 on:
   push:
-    branches: [ main ]
+    branches: [ main, staging, development ]
     paths:
       - 'client/**'
+      - '.github/workflows/client.yml'
   pull_request:
-    branches: [ main ]
+    branches: [ main, staging, development ]
     paths:
       - 'client/**'
+      - '.github/workflows/client.yml'
 
 jobs:
   test:
+    name: client/test
     runs-on: ubuntu-latest
     defaults:
       run:
@@ -44,6 +47,7 @@ jobs:
         run: npm test || echo "No tests specified"
 
   build:
+    name: client/build
     needs: test
     runs-on: ubuntu-latest
     defaults:
