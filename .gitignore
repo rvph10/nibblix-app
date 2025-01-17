@@ -56,3 +56,6 @@ docker-compose.override.yml
 # Cache
 .eslintcache
 .cache
+shared/dist
+shared/node_modules
+shared/coverage

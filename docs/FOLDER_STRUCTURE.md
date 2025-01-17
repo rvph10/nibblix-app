@@ -1,30 +1,3 @@
-#!/bin/bash
-
-# Create client folders
-mkdir -p client/src/{app,components,hooks,lib,services,store,styles,types,utils}
-mkdir -p client/src/app/{error,loading}
-mkdir -p client/src/components/{auth,common,dashboard,forms,layout,menu,orders,restaurant,tables,ui}
-mkdir -p client/src/hooks/{api,auth,form,restaurant,store}
-mkdir -p client/src/services/{api,auth,restaurant,storage}
-mkdir -p client/src/store/{slices,middleware}
-mkdir -p client/src/types/{api,auth,components,restaurant}
-mkdir -p client/src/utils/{formatting,validation,api}
-mkdir -p client/public/{icons,images}
-
-# Create server folders
-mkdir -p server/src/{config,constants,controllers,decorators,dto,entities,events,filters,guards,interfaces,middlewares,modules,repositories,services,types,utils}
-mkdir -p server/src/modules/{auth,restaurant,order,inventory,user,table,analytics,notification}
-mkdir -p server/test/{e2e,integration,unit}
-
-# Create shared folders
-mkdir -p shared/src/{types,constants,utils,config,interfaces,validators}
-mkdir -p shared/src/types/{auth,restaurant,order,inventory,user}
-mkdir -p shared/src/constants/{permissions,settings,validation}
-mkdir -p shared/src/utils/{formatting,validation,security}
-mkdir -p shared/tests/{unit,integration}
-
-# Documentation
-cat << 'EOF' > FOLDER_STRUCTURE.md
 # Nibblix Folder Structure Documentation
 
 ## Client Structure
@@ -67,6 +40,7 @@ client/
 │   ├── types/                 # TypeScript type definitions
 │   └── utils/                 # Utility functions
 └── public/                    # Static files
+```
 
 ## Server Structure
 ```
@@ -97,6 +71,7 @@ server/
 │   ├── types/               # Type definitions
 │   └── utils/               # Utility functions
 └── test/                    # Test files
+```
 
 ## Shared Structure
 ```
@@ -165,7 +140,3 @@ shared/
    - Keep README files updated
    - Use JSDoc for complex functions
    - Maintain API documentation
-EOF
-
-# Create necessary .gitkeep files to track empty directories
-find . -type d -empty -exec touch {}/.gitkeep \;
