@@ -11,4 +11,5 @@ module.exports = {
     ecmaVersion: 2022,
     sourceType: 'module',
   },
+  ignorePatterns: ['node_modules/', 'dist/', '.next/', '*.config.js', '*.config.ts'],
 };
