@@ -1,0 +1,11 @@
+.git
+**/node_modules
+**/dist
+**/.next
+**/coverage
+**/build
+.env
+.env.*
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*

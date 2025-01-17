@@ -1,17 +1,18 @@
-version: '3.8'
-
 services:
   client:
     build:
-      context: ./client
-      dockerfile: Dockerfile
+      context: .
+      dockerfile: client/Dockerfile
     ports:
       - "3000:3000"
     volumes:
-      - ./client:/app
-      - /app/node_modules
+      - ./client:/app/client
+      - ./shared:/app/shared
+      - /app/client/node_modules
+      - /app/shared/node_modules
     environment:
       - NODE_ENV=development
+      - NEXT_PUBLIC_API_URL=http://server:4000
     depends_on:
       - server
     networks:
@@ -19,13 +20,15 @@ services:
 
   server:
     build:
-      context: ./server
-      dockerfile: Dockerfile
+      context: .
+      dockerfile: server/Dockerfile
     ports:
       - "4000:4000"
     volumes:
-      - ./server:/app
-      - /app/node_modules
+      - ./server:/app/server
+      - ./shared:/app/shared
+      - /app/server/node_modules
+      - /app/shared/node_modules
     environment:
       - NODE_ENV=development
       - PORT=4000
