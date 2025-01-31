@@ -1,4 +1,3 @@
-import { SentryTest } from '@/components/debug/sentry-test';
 import Image from 'next/image';
 
 export default function Home() {
@@ -50,7 +49,6 @@ export default function Home() {
           </a>
         </div>
       </main>
-      <SentryTest />
       <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
         <a
           className="flex items-center gap-2 hover:underline hover:underline-offset-4"
