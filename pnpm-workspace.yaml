@@ -1,0 +1,5 @@
+packages:
+  - 'apps/*'
+  - 'packages/*'
+  - '!**/test/**'  # Exclude test directories
+  - '!**/.next/**' # Exclude Next.js build output

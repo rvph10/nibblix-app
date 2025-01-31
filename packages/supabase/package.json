@@ -1,0 +1,33 @@
+{
+  "name": "@nibblix/supabase",
+  "version": "0.0.1",
+  "private": true,
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "sideEffects": false,
+  "license": "MIT",
+  "files": [
+    "dist/**"
+  ],
+  "scripts": {
+    "build": "tsup src/index.ts --format esm,cjs --dts",
+    "dev": "tsup src/index.ts --format esm,cjs --watch --dts",
+    "lint": "eslint \"src/**/*.ts*\"",
+    "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.5",
+    "eslint": "^8.40.0",
+    "tsup": "^6.7.0",
+    "typescript": "^5.0.0",
+    "@nibblix/typescript-config": "workspace:*"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.39.3",
+    "zod": "^3.22.4"
+  },
+  "peerDependencies": {
+    "@nibblix/env": "workspace:*"
+  }
+}
